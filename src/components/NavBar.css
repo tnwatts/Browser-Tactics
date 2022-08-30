@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: rgba(116, 212, 212, 0.828);
+}
+.nav {
+   
+    padding: 10px;
+    list-style-type: none;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav li{
+    padding-left: 15px;
+    margin-left: 25px;
+}
