@@ -2,9 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
-    userId: { type: Schema.Types.ObjectId, ref: "User" },
-    wins: Number,
-    losses: Number,
+    _id: Schema.Types.ObjectId,
+    name: String,
+    wins: {type: Number, default: 0},
+    losses: {type: Number, default: 0},
+    inGame: {type: Boolean, default: false},
+    
   },
   {
     timestamps: true,

@@ -1,0 +1,28 @@
+.game-board-container {
+    display: flex;
+    margin-left: 100px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: 40px repeat(21, 1fr);
+    grid-template-rows: 40px repeat(14, 1fr);
+    justify-items: center;
+    gap: 0px;
+    background-image: url("https://i.imgur.com/rY0sGh9.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid black;
+    padding: 1px;
+}
+
+.game-cell {
+    margin: 0;
+    padding: 0;
+   min-height: 40px;
+   min-width: 40px;
+   border:1px solid black;
+   border-radius: 3px;
+   font-size: 8px;
+}
