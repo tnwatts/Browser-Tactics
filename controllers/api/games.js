@@ -21,9 +21,3 @@ async function create(req, res) {
       profile.save();
       res.json(game);
 }
-
-async function show(req,res) {
-    const profile = await Profile.findById(req.user._id)
-    res.json(profile);
-}
-

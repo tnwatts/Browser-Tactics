@@ -49,7 +49,7 @@ async function update(req, res) {
 
   
   await profile.save();
-  res.json(cart);
+  res.json(profile);
 }
 
 async function profile(req,res) {
