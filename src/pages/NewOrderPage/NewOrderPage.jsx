@@ -1,8 +1,8 @@
-export default function NewOrderPage() {
+export default function Hub() {
 
 
 
   return (
-    <h1>NewOrderPage</h1>
+    <h1>Hub shows profile, and button to create new game</h1>
   );
 }
