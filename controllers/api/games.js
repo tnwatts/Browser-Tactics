@@ -5,7 +5,7 @@ const Game = require('../../models/game');
 
 module.exports = {
   create,
-  show,
+  getByUser,
 //   update,
 //   addPlayer,
 };
@@ -14,10 +14,14 @@ module.exports = {
 async function create(req, res) {
     const profile = await Profile.findById(req.user._id)
       const game = await Game.create({players: [req.user._id]})
-      units = await Archetype.find({owners: req.user._id})
-      game.units.push(...units)
       game.save();
-      profile.inGame = true;
+      profile.gameStatus = 1;
       profile.save();
       res.json(game);
+}
+
+
+async function getByUser(req,res) {
+    const game = await Game.findOne({user: req.user._id})
+    res.json(game)
 }

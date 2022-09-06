@@ -33,9 +33,6 @@ async function create(req, res) {
       a.owners.push(profile._id)
       a.save();
     })
-    console.log("CREATE USER RAN")
-    
-    
     const token = createJWT(user);
     res.json(token);
   } catch (err) {
@@ -46,14 +43,12 @@ async function create(req, res) {
 
 async function update(req, res) {
   const profile = Profile.findById(req.user._id)
-
-  
   await profile.save();
   res.json(profile);
 }
 
 async function profile(req,res) {
-  const profile = await Profile.findById(req.user._id)
+  const profile = await Profile.findById(req.params.id)
   res.json(profile);
 }
 

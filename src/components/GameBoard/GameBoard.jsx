@@ -1,12 +1,17 @@
 import "./GameBoard.css"
 import "./Token.css"
 import Token from "./Token"
-import { useState } from "react"
-export default function GameBoard() {
+
+import { useState, useEffect } from "react"
+import { getUsersGame } from '../../utilities/games-api';
+export default function GameBoard({game, setGame}) {
 
     const [board, setBoard] = useState(Array(330).fill(0).map( (a,i) => [i%22, Math.floor(i/22)]) )
-    
   
+    const [pOneTokens, setpOneTokens] = useState()
+
+    
+    console.log(game)
     return(
         <div className="game-board-container">
             <div className="game-board">

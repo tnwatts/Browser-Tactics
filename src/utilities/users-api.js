@@ -12,6 +12,11 @@ export function login(credentials) {
   return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
 }
 
+export function checkToken() {
+  return sendRequest(`${BASE_URL}/check-token`);
+}
+
 export function getProfile(userId) {
-  return sendRequest(`${BASE_URL}/login`, 'POST', userId);
+  console.log(userId)
+  return sendRequest(`${BASE_URL}/profile/${userId}`)
 }

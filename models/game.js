@@ -10,14 +10,12 @@ const gameSchema = new Schema({
         default: [],
       },
     units: {
-        type: [Schema.Types.ObjectId],
+        type: [[Schema.Types.ObjectId],[Schema.Types.ObjectId]],
         ref: "Archetype",
-        default: [],
+        default: [[],[]],
       },
-    p1UnitDamage: {type: [Number], default: []},
-    p2UnitDamage: {type: [Number], default: []},
-    p1UnitPos: {type: [[Number,Number]], default: []},
-    p2UnitPos: {type: [[Number,Number]], default: []},
+    UnitDamage: {type: [[Number],[Number]], default: [[],[]]},
+    UnitPos: {type: [[Number,Number],[Number,Number]], default: [[],[]]}, //xy position for player1-0 and player2-0
     phase: {type: Number, default: 0}, // 0-setup, 1-playing, 2-finished
     winner: {type: Number, default: 0}, //0 for no winner, 1 for pOne, 2 for pTwo
   },

@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+.game-container{
+  display: flex;
+  flex-direction: row;
+}

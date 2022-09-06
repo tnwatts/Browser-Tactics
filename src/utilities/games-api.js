@@ -3,8 +3,14 @@ const BASE_URL = '/api/games';
 
 
 export function createGame(userId) {
-    return sendRequest(`${BASE_URL}/pOne/${userId}`, 'POST')
+    return sendRequest(`${BASE_URL}/users/${userId}`, 'POST')
+} 
+
+export function getUsersGame(userId){
+    return sendRequest(`${BASE_URL}/users/${userId}`);
 }
+
+
 
 export function getAll() {
     return sendRequest(BASE_URL);
