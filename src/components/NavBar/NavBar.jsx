@@ -11,13 +11,9 @@ export default function NavBar({ user, setUser }) {
   return (
   <nav className="nav-bar dark-background p-2 mb-2">
     <ul className="nav nav-tabs">
-  <NavLink className={a => "nav-link" + (a ? " bg-secondary" : "") } to='/Profile'>Profile</NavLink>
-  <li className="nav-item">
-    <NavLink className="nav-link light-background" to='/Game'>Game</NavLink>
-  </li>
-  <li className="nav-item">
-   <NavLink className="nav-link" to='' onClick={handleLogOut}>Log Out</NavLink>
-  </li>
+  <NavLink className={({isActive}) => [ 'mx-1 bg-gradient nav-link', isActive ? "bg-secondary text-dark" : "text-light"].filter(Boolean).join(" ") } to='/Profile' >Profile</NavLink>
+    <NavLink className={({isActive}) => [ 'mx-1 bg-gradient nav-link', (isActive ? "bg-success text-dark":  "text-light")].filter(Boolean).join(" ")}  to='/Game'>Game</NavLink>
+   <NavLink className="nav-link mx-1 text-warning bg-gradient" to='' onClick={handleLogOut}>Log Out</NavLink>
 </ul>
       {/* 
       &nbsp; | &nbsp;

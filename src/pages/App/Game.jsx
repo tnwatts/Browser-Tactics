@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { getUsersGame } from '../../utilities/games-api';
 import './App.scss';
 
-export default function Match({user}) {
+export default function Match({user, profile}) {
     const [game, setGame] = useState();
 
 
@@ -20,7 +20,7 @@ export default function Match({user}) {
     return(
         <div className='col-10 mx-auto'>
             <GameBoard  game={game} setGame={setGame}/>
-            <StatusWindow game={game}/>
+            <StatusWindow game={game} setGame={setGame} player1={user._id}/>
         </div>
     )
 }
