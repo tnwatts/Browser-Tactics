@@ -6,6 +6,8 @@ import './App.css';
 export default function Match({user}) {
     const [game, setGame] = useState();
 
+
+
     useEffect(function() {
         async function loadGame(id){
             const game = await getUsersGame(id);
@@ -16,8 +18,8 @@ export default function Match({user}) {
     
     return(
         <div className='game-container'>
-            <div>options</div>
-            <GameBoard game={game} setGame={setGame}/>
+            <div className="col-2">options</div>
+            <GameBoard  game={game} setGame={setGame}/>
         </div>
     )
 }
