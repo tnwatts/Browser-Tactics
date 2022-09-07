@@ -1,4 +1,5 @@
 import GameBoard from "../../components/GameBoard/GameBoard"; 
+import StatusWindow from "../../components/StatusWindow/StatusWindow";
 import { useState, useEffect } from "react"
 import { getUsersGame } from '../../utilities/games-api';
 import './App.css';
@@ -17,9 +18,9 @@ export default function Match({user}) {
     },[user])
     
     return(
-        <div className='game-container'>
-            <div className="col-2">options</div>
+        <div className='col-10 mx-auto'>
             <GameBoard  game={game} setGame={setGame}/>
+            <StatusWindow game={game}/>
         </div>
     )
 }
