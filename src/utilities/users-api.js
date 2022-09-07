@@ -17,6 +17,5 @@ export function checkToken() {
 }
 
 export function getProfile(userId) {
-  console.log(userId)
   return sendRequest(`${BASE_URL}/profile/${userId}`)
 }

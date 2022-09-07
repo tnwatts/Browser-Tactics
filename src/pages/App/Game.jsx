@@ -2,7 +2,7 @@ import GameBoard from "../../components/GameBoard/GameBoard";
 import StatusWindow from "../../components/StatusWindow/StatusWindow";
 import { useState, useEffect } from "react"
 import { getUsersGame } from '../../utilities/games-api';
-import './App.css';
+import './App.scss';
 
 export default function Match({user}) {
     const [game, setGame] = useState();

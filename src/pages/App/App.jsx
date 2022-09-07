@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
@@ -7,12 +7,18 @@ import AuthPage from '../AuthPage/AuthPage';
 import Game from './Game';
 import Profile from '../../components/Profile/Profile';
 import NavBar from '../../components/NavBar/NavBar';
-import './App.css';
+import './App.scss';
 import { getProfile } from '../../utilities/users-api';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [profile, setProfile] = useState(getProfile(user._id));
+  // const [profile, setProfile] = useState();
+  
+  let profile = useRef(null);
+  {if (user){
+    profile.current = getProfile(user._id)}
+  } 
+
 
   return (
     <main className="App">

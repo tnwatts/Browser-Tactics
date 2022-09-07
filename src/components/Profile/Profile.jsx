@@ -26,7 +26,7 @@ export default function Profile({user}) {
     return(
         <div>
 
-        { (!profile.gameStatus  ) &&  <button onClick={handleNewGame}>NEW GAME</button>}
+        { (!profile.gameStatus  ) &&  <button className="btn btn-primary" onClick={handleNewGame}>NEW GAME</button>}
         <div>Hello {profile.name}</div>
         <div> Game Status: {profile.gameStatus ?  (`You are player ${profile.gameStatus===1 ? 'one' : 'two'}`) : "You are not in a game"}</div>
         <Link to={'/game'}>To Game!</Link>
