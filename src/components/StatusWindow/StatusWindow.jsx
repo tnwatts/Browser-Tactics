@@ -12,12 +12,12 @@ export default function StatusWindow({ game }) {
       </button>
 
       <div
-        className="offcanvas mh-75 offcanvas-bottom"
+        className="offcanvas h-50 offcanvas-bottom"
         tabindex="-1"
         id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel"
       >
-        <div className="offcanvas-header h-25 dark-background light-text">
+        <div className="offcanvas-header  dark-background light-text">
           <h5 className="h-75" id="offcanvasBottomLabel">
             Status
           </h5>
@@ -28,7 +28,11 @@ export default function StatusWindow({ game }) {
             aria-label="Close"
           ></button>
         </div>
-        <div className="offcanvas-body  large light-background dark-text">...</div>
+        <div className="offcanvas-body row large light-background dark-text">
+            <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2">UNIT</div>
+            <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2">UNIT</div>
+            <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2">UNIT</div>
+        </div>
       </div>
     </>
   );

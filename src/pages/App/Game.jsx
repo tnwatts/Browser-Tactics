@@ -1,5 +1,6 @@
 import GameBoard from "../../components/GameBoard/GameBoard"; 
 import StatusWindow from "../../components/StatusWindow/StatusWindow";
+import Token from "../../components/GameBoard/Token";
 import { useState, useEffect } from "react"
 import { getUsersGame } from '../../utilities/games-api';
 import './App.scss';
