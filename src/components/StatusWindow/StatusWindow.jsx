@@ -1,5 +1,6 @@
 import "./Status.css"
 import { useEffect, useState } from "react";
+import { addPlayer2 } from "../../utilities/games-api";
 export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits, user }) {
     const [inputPlayer, setInputPlayer] = useState('')
     function log(){
@@ -19,11 +20,12 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
         // g = game
         return
     }
-    function handleChange(){
-        return
+    function handleChange(evt){
+        setInputPlayer(evt.target.value ); 
+        
     }
     function handleAddPlayer(){
-        return
+        addPlayer2(inputPlayer)
     }
   return (
     <>
@@ -75,11 +77,11 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
                     Add Player: 
                 </h5>
                 <input onChange={handleChange} ></input>
-                <button onclick={handleAddPlayer} className="btn dark-background btn-warning btn-outline-warning mx-1">Add</button>
+                <button onClick={handleAddPlayer} className="btn dark-background btn-warning btn-outline-warning mx-1">Add</button>
                 </>
                 }
                 { game.players[1] &&
-                <button onclick={startGame} className="btn dark-background btn-warning btn-outline-warning mx-1"> START </button>
+                <button onClick={startGame} className="btn dark-background btn-warning btn-outline-warning mx-1"> START </button>
                 }
             </div>
         </div>

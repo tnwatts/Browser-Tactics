@@ -31,13 +31,16 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div>
-      <div className="col-6 mx-auto p-2 border rounded-3 dark-background light-text">
-        <form className="form-control input-group light-background mx-auto" autoComplete="off" onSubmit={handleSubmit}>
+      <div className="col-5 mx-auto">
+        <form className="form-control dark-background light-text  lifted my-3 mx-auto border border-primary border-1" autoComplete="off" onSubmit={handleSubmit}>
+          <div className="input-group px-3 my-3">
+
           <label className="input-label">Email</label>
-          <input classname="input-group" type="text" name="email" value={credentials.email} onChange={handleChange} required />
+          <input className="input-group rounded-2 bg-primary text-secondary" type="text" name="email" value={credentials.email} onChange={handleChange} required />
           <label className="input-label">Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
+          <input className="input-group rounded-2 bg-primary text-secondary" type="password" name="password" value={credentials.password} onChange={handleChange} required />
+          </div>
+          <button className="lighten-area col-3 btn light-background my-2  btn-outline-secondary fw-bold" type="submit">LOG IN</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

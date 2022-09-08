@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
   return (
   <nav className="nav-bar dark-background p-2 mb-2">
     <ul className="nav nav-tabs">
-  <NavLink className={({isActive}) => [ 'mx-1 bg-gradient nav-link', isActive ? "bg-secondary text-dark" : "text-light"].filter(Boolean).join(" ") } to='/Profile' >Profile</NavLink>
+  <NavLink className={({isActive}) => [ 'mx-1 bg-gradient nav-link', isActive ? "bg-primary text-dark" : "text-light"].filter(Boolean).join(" ") } to='/Profile' >Profile</NavLink>
     <NavLink className={({isActive}) => [ 'mx-1 bg-gradient nav-link', (isActive ? "bg-success text-dark":  "text-light")].filter(Boolean).join(" ")}  to='/Game'>Game</NavLink>
    <NavLink className="nav-link mx-1 text-warning bg-gradient" to='' onClick={handleLogOut}>Log Out</NavLink>
 </ul>
