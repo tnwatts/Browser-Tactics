@@ -2,9 +2,9 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const seed = require('./controllers/api/archetypes');
+// seed.seed();
 
-
-// const seed = require('./controllers/api/archetypes');
 // seed.seed();
 
 
@@ -30,6 +30,7 @@ const port = process.env.PORT ||  3001;
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/games', require('./routes/api/games'));
+app.use('/api/archetypes', require('./routes/api/archetypes'));
 
 
 // The following "catch all" route (note the *) is necessary

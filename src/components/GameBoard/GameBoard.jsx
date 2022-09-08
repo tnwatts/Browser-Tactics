@@ -11,7 +11,6 @@ export default function GameBoard({game, setGame}) {
     const [pOneTokens, setpOneTokens] = useState()
 
     
-    console.log(game)
     return(
         <div className="col-8 game-board-container">
             <div className="game-board">

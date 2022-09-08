@@ -7,6 +7,7 @@ const profileSchema = new Schema({
     wins: {type: Number, default: 0},
     losses: {type: Number, default: 0},
     gameStatus: {type: Number, default: 0}, //0- not in game, 1-player1, 2-player2
+    messages: [{}],
     
   },
   {

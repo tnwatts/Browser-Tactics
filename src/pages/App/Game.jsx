@@ -3,25 +3,49 @@ import StatusWindow from "../../components/StatusWindow/StatusWindow";
 import Token from "../../components/GameBoard/Token";
 import { useState, useEffect } from "react"
 import { getUsersGame } from '../../utilities/games-api';
+import { getUsersList } from "../../utilities/archetypes-api";
+import { getProfile } from "../../utilities/users-api";
 import './App.scss';
 
-export default function Match({user, profile}) {
+export default function Match({user}) {
     const [game, setGame] = useState();
-
-
+    const [usersUnits, setUsersUnits] = useState();
+    const [profile, setProfile] = useState({});
 
     useEffect(function() {
         async function loadGame(id){
             const game = await getUsersGame(id);
+            const units = await getUsersList(id); 
+            const p = await getProfile(id)
             setGame(game);
+            setUsersUnits(units);
+            setProfile(p)
         }
         loadGame(user._id);
     },[user])
+    console.log(game, usersUnits)
     
+
+    
+    // useEffect(function(){
+      
+    // },[user._id])
+    //[game.players[0]] 
+
+
+    // console.log(game.players[0])
+    // console.log(game.players[0].id)
+    // console.log(game.players[0]._id)
+
     return(
         <div className='col-10 mx-auto'>
+            { usersUnits ?<>
             <GameBoard  game={game} setGame={setGame}/>
-            <StatusWindow game={game} setGame={setGame} player1={user._id}/>
+            <StatusWindow game={game} setGame={setGame} units={usersUnits} setUsersUnits={setUsersUnits}/>
+            </>
+            :
+            "no current game"
+        }
         </div>
     )
 }

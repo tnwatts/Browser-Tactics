@@ -6,6 +6,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 export default function Profile({user}) {
     const [profile,setProfile] = useState({})
     console.log(user._id)
+    let navigate = useNavigate();
 
     useEffect(function() {
         console.log(user, 'test')
@@ -19,7 +20,7 @@ export default function Profile({user}) {
     async function handleNewGame (evt) {
         evt.preventDefault();
         await createGame(user._id);
-        this("../success", { replace: true }).useNavigate()
+        navigate('/Game', { replace: true })
     }
     
 

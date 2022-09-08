@@ -7,6 +7,7 @@ const archetypeSchema = new Schema({
     attackMultiplier: Number,
     movement: Number,
     cost: Number,
+    image: String,
     owners: {
       type: [Schema.Types.ObjectId],
       ref: "Profile",

@@ -1,4 +1,7 @@
-export default function StatusWindow({ game }) {
+export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits }) {
+    function log(){
+        console.log(game, usersUnits)
+    }
   return (
     <>
       <button
@@ -7,13 +10,14 @@ export default function StatusWindow({ game }) {
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasBottom"
         aria-controls="offcanvasBottom"
+        onClick={log}
       >
         Status
       </button>
 
       <div
         className="offcanvas h-50 offcanvas-bottom"
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel"
       >
@@ -29,7 +33,7 @@ export default function StatusWindow({ game }) {
           ></button>
         </div>
         <div className="offcanvas-body row large light-background dark-text">
-            <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2">UNIT</div>
+            <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2"></div>
             <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2">UNIT</div>
             <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2">UNIT</div>
         </div>
