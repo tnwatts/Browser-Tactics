@@ -46,7 +46,7 @@ export default function Match({user}) {
             { game && usersUnits ?
             <>
             <GameBoard  game={game} setGame={setGame}/>
-            <StatusWindow game={game} setGame={setGame} usersUnits={usersUnits} setUsersUnits={setUsersUnits}/>
+            <StatusWindow game={game} setGame={setGame} usersUnits={usersUnits} setUsersUnits={setUsersUnits} user={user}/>
             </>
             :
             "no current game"
