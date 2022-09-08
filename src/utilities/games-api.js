@@ -10,7 +10,9 @@ export function getUsersGame(userId){
     return sendRequest(`${BASE_URL}/users/${userId}`);
 }
 
-
+export function addPlayer2(id){
+    return sendRequest(`${BASE_URL}/users/${id}`, 'PUT')
+}
 
 export function getAll() {
     return sendRequest(BASE_URL);

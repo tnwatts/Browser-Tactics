@@ -9,8 +9,6 @@
 .unit-wrap{
     
     height: 160px;
-    border: 1px solid black;
-    border-radius: 8px;
 }
 
 .unit-wrap > h5{

@@ -1,6 +1,7 @@
 import "./Status.css"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits, user }) {
+    const [inputPlayer, setInputPlayer] = useState('')
     function log(){
         console.log(game, usersUnits)
     }
@@ -14,6 +15,16 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
         }
         assignUnits()
     },[])
+    function startGame(){
+        // g = game
+        return
+    }
+    function handleChange(){
+        return
+    }
+    function handleAddPlayer(){
+        return
+    }
   return (
     <>
       <button
@@ -45,26 +56,31 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
           ></button>
         </div>
         <div className="offcanvas-body row large light-background dark-text">
-            <div className="col-2 mx-3 light-backgroundg unit-wrap">
-            <h5 className="text-dark mx-auto my-1">{usersUnits[0].name}</h5>
+            <div className="col-2 mx-3 light-backgroundg unit-wrap border border-1 border-warning rounded-2">
+            <h5 className="text-dark mx-auto my-1">{usersUnits[0].archetype}</h5>
             <div className="selector" style={{ backgroundImage: `url(${usersUnits[0].image}`}} ></div>
             </div>
-            <div className="col-2 mx-3 light-backgroundg unit-wrap">
+            <div className="col-2 mx-3 light-backgroundg unit-wrap border border-1 border-warning rounded-2">
             <h5 className="text-dark mx-auto my-1">{usersUnits[1].name}</h5>
             <div className="selector"  style={{ backgroundImage: `url(${usersUnits[1].image}`}} ></div>
             </div>
-            <div className="col-2 mx-3 light-backgroundg unit-wrap">
+            <div className="col-2 mx-3 light-backgroundg unit-wrap border border-1 border-warning rounded-2">
             <h5 className="text-dark mx-auto my-1">{usersUnits[2].name}</h5>
             <div className="selector"  style={{ backgroundImage: `url(${usersUnits[2].image}`}} ></div>
             </div>
-            <div className="col-4 mx-auto">
+            <div className="col-4 mx-auto light-background border border-2 border-warning rounded-2 ">
+                { !game.players[1] &&
+                <>
                 <h5>
                     Add Player: 
-                    </h5>
-                    <input></input>
-                    <button className="btn dark-background btn-warning btn-outline-warning mx-1">Add</button>
-            
-            
+                </h5>
+                <input onChange={handleChange} ></input>
+                <button onclick={handleAddPlayer} className="btn dark-background btn-warning btn-outline-warning mx-1">Add</button>
+                </>
+                }
+                { game.players[1] &&
+                <button onclick={startGame} className="btn dark-background btn-warning btn-outline-warning mx-1"> START </button>
+                }
             </div>
         </div>
       </div>

@@ -17,7 +17,11 @@ export default function GameBoard({game, setGame}) {
             {board.map( function(cell, idx){
                 return <div id={`${cell[0]} ${cell[1]}`}   key={idx} className="game-cell"> x: {cell[0]} y: {cell[1]}  </div>
             })}
-            <Token />
+            {game.units[0].map( function(u, idx) {
+            <Token unit={u} />
+
+            })
+        }
             </div>
         </div>
     )

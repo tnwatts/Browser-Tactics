@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const archetypeSchema = new Schema({
     name: String,
+    archetype: String,
     hp: Number,
     attackMultiplier: Number,
     movement: Number,
