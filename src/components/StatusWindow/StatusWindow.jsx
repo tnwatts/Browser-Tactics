@@ -1,3 +1,4 @@
+import "./Status.css"
 export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits }) {
     function log(){
         console.log(game, usersUnits)
@@ -33,9 +34,9 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits 
           ></button>
         </div>
         <div className="offcanvas-body row large light-background dark-text">
-            <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2"></div>
-            <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2">UNIT</div>
-            <div className="col-2 h-51 border mx-3 border-primary border-3 rounded-2">UNIT</div>
+            <div className="col-2 h-50 border mx-3 border-primary border-3 rounded-2 selector" style={{ backgroundImage: `url(${usersUnits[0].image}`}} >{usersUnits[0].name}</div>
+            <div className="col-2 h-50 border mx-3 border-primary border-3 rounded-2 selector"  style={{ backgroundImage: `url(${usersUnits[1].image}`}} >{usersUnits[1].name}</div>
+            <div className="col-2 h-50 border mx-3 border-primary border-3 rounded-2 selector"  style={{ backgroundImage: `url(${usersUnits[2].image}`}} >{usersUnits[2].name}</div>
         </div>
       </div>
     </>

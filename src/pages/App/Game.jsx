@@ -14,17 +14,21 @@ export default function Match({user}) {
 
     useEffect(function() {
         async function loadGame(id){
-            const game = await getUsersGame(id);
+            const g = await getUsersGame(id);
             const units = await getUsersList(id); 
             const p = await getProfile(id)
-            setGame(game);
+            setGame(g);
             setUsersUnits(units);
             setProfile(p)
         }
         loadGame(user._id);
     },[user])
-    console.log(game, usersUnits)
-    
+    // console.log(game, usersUnits)
+    if (usersUnits){
+        if(usersUnits.length < 1){
+        console.log('test')
+        setUsersUnits(null)
+    }}
 
     
     // useEffect(function(){
@@ -33,19 +37,21 @@ export default function Match({user}) {
     //[game.players[0]] 
 
 
-    // console.log(game.players[0])
+    console.log(usersUnits)
     // console.log(game.players[0].id)
     // console.log(game.players[0]._id)
 
     return(
         <div className='col-10 mx-auto'>
-            { usersUnits ?<>
+            { game && usersUnits ?
+            <>
             <GameBoard  game={game} setGame={setGame}/>
-            <StatusWindow game={game} setGame={setGame} units={usersUnits} setUsersUnits={setUsersUnits}/>
+            <StatusWindow game={game} setGame={setGame} usersUnits={usersUnits} setUsersUnits={setUsersUnits}/>
             </>
             :
             "no current game"
         }
+        
         </div>
     )
 }
