@@ -7,7 +7,7 @@ import { getUsersGame } from '../../utilities/games-api';
 export default function GameBoard({game, setGame}) {
 
     const [board, setBoard] = useState(Array(330).fill(0).map( (a,i) => [i%22, Math.floor(i/22)]) )
-  
+    console.log(game)
     const [pOneTokens, setpOneTokens] = useState()
 
     

@@ -43,7 +43,7 @@ export default function Match({user}) {
 
     return(
         <div className='col-10 mx-auto'>
-            { game && usersUnits ?
+            { game && usersUnits.length > 0 ?
             <>
             <GameBoard  game={game} setGame={setGame}/>
             <StatusWindow game={game} setGame={setGame} usersUnits={usersUnits} setUsersUnits={setUsersUnits} user={user}/>

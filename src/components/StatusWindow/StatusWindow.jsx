@@ -1,6 +1,8 @@
 import "./Status.css"
 import { useEffect, useState } from "react";
 import { addPlayer2 } from "../../utilities/games-api";
+import { getUsersGame } from "../../utilities/games-api";
+import { updateBoardState } from "../../utilities/games-api";
 export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits, user }) {
     const [inputPlayer, setInputPlayer] = useState('')
     function log(){
@@ -17,7 +19,9 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
         assignUnits()
     },[])
     function startGame(){
-        // g = game
+        game.phase = 1
+        game.units[0] = usersUnits
+        updateBoardState(game._id, game)
         return
     }
     function handleChange(evt){
@@ -26,6 +30,7 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
     }
     function handleAddPlayer(){
         addPlayer2(inputPlayer)
+        getUsersGame(user._id)
     }
   return (
     <>
@@ -70,7 +75,7 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
             <h5 className="text-dark mx-auto my-1">{usersUnits[2].archetype}</h5>
             <div className="selector"  style={{ backgroundImage: `url(${usersUnits[2].image}`}} ></div>
             </div>
-            <div className="col-4 mx-auto light-background border border-2 border-warning rounded-2 ">
+            <div className="col-4 mx-auto py-2 light-background border border-2 border-warning rounded-2 ">
                 { !game.players[1] &&
                 <>
                 <h5>
@@ -81,7 +86,18 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
                 </>
                 }
                 { game.players[1] &&
-                <button onClick={startGame} className="btn dark-background btn-warning btn-outline-warning mx-1"> START </button>
+                <>
+                <h5>
+                    Player 2 set. 
+                </h5>
+                <h5>
+                    Game Ready. 
+                </h5>
+                <h5>
+                    Start?
+                </h5>
+                <button onClick={startGame} className="col-12 btn dark-background btn-warning btn-outline-warning  my-5"> START </button>
+                </>
                 }
             </div>
         </div>

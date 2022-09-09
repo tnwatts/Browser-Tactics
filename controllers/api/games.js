@@ -7,6 +7,7 @@ module.exports = {
   create,
   getByUser,
   addPlayer2,
+  updateGame,
 
 //   update,
 //   addPlayer,
@@ -31,11 +32,19 @@ async function getByUser(req,res) {
 async function addPlayer2(req,res) {
     const game = await Game.findOne({user: req.user._id})
     const user = await Profile.findOne({name: req.params.id})
+    const units = await Archetype.find({})
 
     console.log(game)
     console.log(user)
     game.players.push(user._id)
-    game.units[1] = user.units
+    game.units[1]= units
     game.save()
+    return
+}
+
+async function updateGame(req,res){
+    const game = await Game.findById(req.params.gameId)
+    console.log(game)
+    console.log(req.body.gameState)
     return
 }
