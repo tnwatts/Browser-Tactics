@@ -8,7 +8,7 @@
 
 .unit-wrap{
     
-    height: 160px;
+    height: 190px;
 }
 
 .unit-wrap > h5{
@@ -17,6 +17,6 @@
     height: 20%;
     line-height: 1;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 20px;
     text-shadow: 1.1px 1.1px 1.7px rgba(0, 0, 0, 0.787);
 }

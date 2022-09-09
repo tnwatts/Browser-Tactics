@@ -59,15 +59,15 @@ export default function StatusWindow({ game, setGame, usersUnits, setUsersUnits,
         </div>
         <div className="offcanvas-body row large light-background dark-text">
             <div className="col-2 mx-3 light-backgroundg unit-wrap border border-1 border-warning rounded-2">
-            <h5 className="text-dark mx-auto my-1">{usersUnits[0].archetype}</h5>
-            <div className="selector" style={{ backgroundImage: `url(${usersUnits[0].image}`}} ></div>
+            <h5 className="text-dark mx-auto my-1 pb-1">{usersUnits[0].archetype}</h5>
+            <div className="selector " style={{ backgroundImage: `url(${usersUnits[0].image}`}} ></div>
             </div>
             <div className="col-2 mx-3 light-backgroundg unit-wrap border border-1 border-warning rounded-2">
-            <h5 className="text-dark mx-auto my-1">{usersUnits[1].name}</h5>
+            <h5 className="text-dark mx-auto my-1">{usersUnits[1].archetype}</h5>
             <div className="selector"  style={{ backgroundImage: `url(${usersUnits[1].image}`}} ></div>
             </div>
             <div className="col-2 mx-3 light-backgroundg unit-wrap border border-1 border-warning rounded-2">
-            <h5 className="text-dark mx-auto my-1">{usersUnits[2].name}</h5>
+            <h5 className="text-dark mx-auto my-1">{usersUnits[2].archetype}</h5>
             <div className="selector"  style={{ backgroundImage: `url(${usersUnits[2].image}`}} ></div>
             </div>
             <div className="col-4 mx-auto light-background border border-2 border-warning rounded-2 ">

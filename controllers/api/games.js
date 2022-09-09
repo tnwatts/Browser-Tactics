@@ -30,10 +30,12 @@ async function getByUser(req,res) {
 
 async function addPlayer2(req,res) {
     const game = await Game.findOne({user: req.user._id})
-    const user = await User.findOne({name: req.params})
+    const user = await Profile.findOne({name: req.params.id})
 
     console.log(game)
-    console.log(profile)
+    console.log(user)
     game.players.push(user._id)
+    game.units[1] = user.units
+    game.save()
     return
 }
