@@ -26,7 +26,6 @@ export default function Match({user}) {
     // console.log(game, usersUnits)
     if (usersUnits){
         if(usersUnits.length < 1){
-        console.log('test')
         setUsersUnits(null)
     }}
 

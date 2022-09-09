@@ -44,7 +44,7 @@ async function addPlayer2(req,res) {
 
 async function updateGame(req,res){
     const game = await Game.findById(req.params.gameId)
-    console.log(game)
+    // game.units[0] = 
     console.log(req.body.gameState)
     return
 }
