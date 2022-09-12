@@ -27,7 +27,7 @@ export default function GameBoard({ game, setGame }) {
   const boardCells = useRef(new Array());
 
   function XYpos(arr) {
-    let xPos = boardPos.current.offsetLeft + 3 + arr[0] * 40.4
+    let xPos = boardPos.current.offsetLeft + 3 + arr[0] * 40.4;
     let yPos = boardPos.current.offsetTop + 2 + arr[1] * 40.7;
     return [xPos, yPos];
   }
@@ -59,7 +59,12 @@ export default function GameBoard({ game, setGame }) {
   }
   return (
     <div className="game-board-container lighten-area border border-3 border-info border mt-2 rounded-5 ps-3 mx-4 py-2 game-board-container dark-background">
-      <GameControls game={game} setGame={setGame} updateBoard={updateBoard} endTurn={endTurn} />
+      <GameControls
+        game={game}
+        setGame={setGame}
+        updateBoard={updateBoard}
+        endTurn={endTurn}
+      />
 
       <div
         ref={boardPos}

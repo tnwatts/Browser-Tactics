@@ -22,7 +22,7 @@ export default function Match({user}) {
         loadGame(user._id);
     },[user])
     // console.log(game, usersUnits)
-    
+   
     async function startGame(){
         let gameCup = {...game}
         gameCup.phase = 1
