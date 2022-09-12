@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 export default function GameControls({ game, setGame, updateBoard, endTurn }) {
   return (
     <div className="position-relative darkest-text fs-1 ps-4 lifted rounded-4 border border-2 border-info light-backgroundg darken-area my-3 py-3 pb-3 ">
-      <h4 className="dark-backgroundg light-lifted font-weight-bold e2 mb-1 mt-2 lighter-text text-info p-1 px-4 p-2 mb-3 fs-4 rounded-3 border border-2 border-info">
+      <h4 className="dark-background light-lifted font-weight-bold e2 mb-1 mt-2 light-text lighter-text  p-1 px-4 p-2 mb-3 fs-4 rounded-3 border border-2 border-danger">
         Game Controls
       </h4>
       <div className="col-11 light-lifted position-absolute  darken-area fs-6 mb-2 ms-2   rounded-5 bottom-0 start-0  darker-background border  border-1 border-warning ">
@@ -23,7 +23,7 @@ export default function GameControls({ game, setGame, updateBoard, endTurn }) {
           <small className="">Status</small>
         </button>
       </div>
-      <div className="container light-text lighter-text fs-6 p-0 box-shadows light-lifted  dark-background lighten-area border border-danger border-1 my-0 rounded-4 box-shadow px-1 me-1  e1">
+      <div className="container  fs-6 p-0 box-shadows light-lifted text-info dark-background lighten-area border border-info border-1 my-0 rounded-4 box-shadow px-1 me-1  e1">
         {(Math.floor(game.turn / 6) + 1) % 2 === 1
           ? "It's Player Ones turn!"
           : "It`s Player Twos turn!"}{" "}

@@ -27,8 +27,8 @@ export default function GameBoard({ game, setGame }) {
   const boardCells = useRef(new Array());
 
   function XYpos(arr) {
-    let xPos = boardPos.current.offsetLeft + 3 + arr[0] * 40.0;
-    let yPos = boardPos.current.offsetTop + 3.5 + arr[1] * 40;
+    let xPos = boardPos.current.offsetLeft + 3 + arr[0] * 40.4
+    let yPos = boardPos.current.offsetTop + 2 + arr[1] * 40.7;
     return [xPos, yPos];
   }
 
@@ -58,12 +58,12 @@ export default function GameBoard({ game, setGame }) {
     let gameHolder = await updateBoardState(gameCup._id, gameCup);
   }
   return (
-    <div className="game-board-container lighten-area border border-3 border-info border lifted rounded-5 ps-3 mx-4 py-2 game-board-container dark-background">
+    <div className="game-board-container lighten-area border border-3 border-info border mt-2 rounded-5 ps-3 mx-4 py-2 game-board-container dark-background">
       <GameControls game={game} setGame={setGame} updateBoard={updateBoard} endTurn={endTurn} />
 
       <div
         ref={boardPos}
-        className="e1 e2 game-board border-2 m-1 ms-3 mx-4 border border-danger rounded-3 lifted"
+        className="e1 light-lifted e2 game-board border-2 m-1 ms-3 mx-4 border border-danger rounded-3 "
       >
         {board.map(function (cell, idx) {
           return (
@@ -112,7 +112,7 @@ export default function GameBoard({ game, setGame }) {
 
       <button
         type="button"
-        className="h-25 col-1 dark-text text-dark darken-area lifted fs-6 btn btn-sm border border-4 rounded-pill py-3 border-warning btn-outline-secondary bg-info mx-5 "
+        className="col h-25 dark-text text-dark darken-area lifted fs-6 btn btn-sm border border-4 rounded-pill py-3 border-warning btn-outline-secondary  mx-5 "
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
       >
