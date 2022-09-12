@@ -1,6 +1,8 @@
 git fetch --all
 git reset --hard origin/main
 
+https://genre-tactics.herokuapp.com/ | https://git.heroku.com/genre-tactics.git
+
 
 # MERN-Stack Infrastructure
 

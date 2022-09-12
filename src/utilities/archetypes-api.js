@@ -14,5 +14,8 @@ export function getUsersList(userId) {
   return sendRequest(`${BASE_URL}/users/${userId}`)
 }
   
+export function seed(){
+  sendRequest(`${BASE_URL}/seed`)
+}
 
   

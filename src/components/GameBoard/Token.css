@@ -1,24 +1,155 @@
 .barbarian{
   background-image: url("https://i.imgur.com/uFcF0FK.png");
 }
-
 .token {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    transition: all;
-    transition-duration: 2s;
-    opacity: 1;
-    box-shadow: 3px 3px  6px black;
-    border: 3px solid rgb(47, 0, 0);
-    border-radius: 50%;
-  }
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  transition: all;
+  transition-duration: 2s;
+  opacity: 1;
+  border-radius: 50%;
+  transform-origin: 50% 5em;
+  top: 800px;
+  padding-right: 2px;
+  padding-bottom: 3px;
+  z-index: -10;
+}
+
+.player1{
+  background: linear-gradient(90deg, rgba(255, 138, 173, 0.579), rgba(205, 128, 83, 0.669));
+  border: 2.8px solid rgba(99, 21, 0, 0.927);
+  box-shadow: 5px 5px 8px rgba(118, 14, 0, 0.763);
+  z-index: 4;
+  
+}
+
+.player2{
+  background: linear-gradient(230deg, rgba(150, 188, 255, 0.817),rgba(30, 60, 135, 0.383));
+  border: 3px solid rgb(24, 101, 255);
+  box-shadow: 6px 6px 9px rgba(0, 30, 85, 0.894);
+  z-index: 4;
+  
+}
+
+.turn{
+  border: 4px solid rgb(255, 246, 149);
+  box-shadow: 4px 4px 8px rgb(172, 231, 229);
+  border-radius: 50%;
+  animation: wiggle 4s linear infinite;
+}
+
+.melee{
+  border: 4px solid rgb(255, 217, 136);
+  box-shadow: 4px 4px 8px rgb(244, 255, 162);
+  border-radius: 50%;
+  animation: attack 3s ease-in infinite;
+}
 
 
 .image  {
-    height: 100%;
-    width: 100%;
+    height: 110%;
+    width: 110%;
+    border-radius: 50%;
+  box-shadow: 9px 9px 9px 16px rgba(255, 255, 114, 0.218);
+
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+    z-index: 4;
 }
+.health-bar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: -1px 5px 2px -2px;
+  width: 38px;
+  height: 8px;
+  padding:1.5px 2.5px 2px 1.5px;
+  background: rgb(255, 227, 134);
+  border-radius: 5px;
+  position: relative;
+  z-index: -10;
+}
+.bar {
+  background: rgb(255, 98, 119);
+  width: 100%;
+  height: 4px;
+  margin-left: 0.5px;
+  border-radius: 2px;
+  position: relative;
+  /* padding-bottom: 5px; */
+  transition: width 2s linear;
+  z-index: -10;
+}
+
+
+/* Animation property */
+
+/* Keyframes */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(6deg);
+  }
+  25% {
+    transform: rotateZ(-6deg);
+  }
+  30% {
+    transform: rotateZ(3deg);
+  }
+  35% {
+    transform: rotateZ(-2deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+@keyframes attack {
+  0%, 4% {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: rotateZ(-15deg);
+  }
+  43% {
+    transform: rotateZ(-21deg);
+  }
+  53% {
+    transform: rotateZ(-8deg);
+  }
+  58% {
+    transform: rotateZ(21deg);
+  }
+  85%,85%, 95%, 100% {
+    transform: rotateZ(-1%);
+  }
+}
+@keyframes spin{
+  0%, 100%{
+    transform: rotate(90deg);
+  }
+}
+/* 
+button {
+  position: absolute;
+  left: calc(50% - 3em);
+  top: calc(50% - 2em);
+  
+  height: 4em;
+  width: 7em;
+  
+  background: #444;
+  background: linear-gradient(top, #555, #333);
+  border: none;
+  border-top: 3px solid orange;
+  border-radius: 0 0 0.2em 0.2em;
+  color: #fff;
+  font-family: Helvetica, Arial, Sans-serif;
+  font-size: 1em;
+} */

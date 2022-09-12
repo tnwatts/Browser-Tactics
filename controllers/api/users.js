@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../../models/user');
 const Profile = require('../../models/profile');
-const Archetype = require('../../models/archetype');
+const [Archetype] = require('../../models/archetype');
 
 module.exports = {
   create,

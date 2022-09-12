@@ -6,8 +6,9 @@ const archetypeSchema = new Schema({
     archetype: String,
     hp: Number,
     attackMultiplier: Number,
-    movement: Number,
-    cost: Number,
+    range: {type: Number, default: 1},
+    movement: {type: Number, defatul: 3},
+    cost: {type: Number, default: 0},
     image: String,
     owners: {
       type: [Schema.Types.ObjectId],
@@ -17,5 +18,5 @@ const archetypeSchema = new Schema({
     
   });
   
-  module.exports = mongoose.model("Archetype", archetypeSchema);
+  module.exports = [mongoose.model("Archetype", archetypeSchema), archetypeSchema];
   

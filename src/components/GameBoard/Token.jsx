@@ -1,13 +1,18 @@
 import "./Token.css"
+import TokenMenu from "./TokenMenu"
+import {useRef} from 'react'
 
-export default function Token({unit}) {
 
-    const token = {
-        image: "https://i.imgur.com/uFcF0FK.png",
-        position: [2,2]
-    }
+export default function Token({unit, player, pos, idx, damage}) {
+    let tokens = useRef({})
+
     return (
-        <div className="token"><img className='image' src={`${unit.image}`} alt=''></img></div>
+        <div className={` player${(player+1)} token ` } style={{left: pos[0], top: pos[1]}}>
+            <img className='image' src={`${unit.image}`} alt=''></img>
+            <div className="health-bar light-lifted pb-1 mb-1">
+                <div className="bar" style={{width:`${damage*100}%`}} ></div>
+            </div>
+            <TokenMenu ref={tokens} className="small" />
+        </div>
     )
 }
-

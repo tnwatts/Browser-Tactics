@@ -1,27 +1,52 @@
 .game-board-container {
-    display: flex;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 1280px;
+  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+  box-shadow: 5px -10px 15px -5px rgba(48, 10, 10, 0.909);
+}
+
+.e1 {
+  background: radial-gradient(at top left, var(--light), var(--dark));
+  box-shadow: 5px -10px 15px -5px rgba(255, 255, 255, 0.1);
+}
+
+.e2 {
+  background: radial-gradient(at top right, var(--light), var(--dark));
+  box-shadow: 5px -10px 15px -5px rgba(255, 255, 255, 0.1);
+}
+.e3 {
+  background: radial-gradient(at bottom left, var(--light), var(--dark));
+  box-shadow: 5px -10px 15px -5px rgba(255, 255, 255, 0.1);
+}
+.e4 {
+  background: radial-gradient(at bottom right, var(--light), var(--dark));
+  box-shadow: 5px -10px 15px -5px rgba(255, 255, 255, 0.1);
 }
 
 .game-board {
-    display: grid;
-    grid-template-columns: 40px repeat(21, 1fr);
-    grid-template-rows: 40px repeat(14, 1fr);
-    justify-items: center;
-    gap: 0px;
-    background-image: url("https://i.imgur.com/rY0sGh9.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 2px solid black;
-    padding: 1px;
+  display: grid;
+  grid-template-columns: 40px repeat(21, 1fr);
+  grid-template-rows: 40px repeat(14, 1fr);
+  justify-items: center;
+  gap: 0.5px;
+  background-image: url("https://i.imgur.com/rY0sGh9.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid black;
+  padding: 1px;
+  --light: #39044b;
+  --dark: #230a2f;
 }
 
 .game-cell {
-    margin: 0;
-    padding: 0;
-   min-height: 40px;
-   min-width: 40px;
-   border:1px solid black;
-   border-radius: 3px;
-   font-size: 8px;
+  margin: 0;
+  padding: 0;
+  min-height: 40px;
+  min-width: 40px;
+  border: 0.5px solid black;
+  border-radius: 3px;
+  font-size: 8px;
 }

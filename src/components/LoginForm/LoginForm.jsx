@@ -32,15 +32,15 @@ export default function LoginForm({ setUser }) {
   return (
     <div>
       <div className="col-5 mx-auto">
-        <form className="form-control dark-background light-text  lifted my-3 mx-auto border border-primary border-1" autoComplete="off" onSubmit={handleSubmit}>
-          <div className="input-group px-3 my-3">
+        <form className="form-control dark-background lighest-text  lifted my-3 mx-auto border border-primary border-1" autoComplete="off" onSubmit={handleSubmit}>
+          <div className="input-group px-3 my-3 light-text text-light">
 
           <label className="input-label">Email</label>
-          <input className="input-group rounded-2 bg-primary text-secondary" type="text" name="email" value={credentials.email} onChange={handleChange} required />
+          <input className="input-group rounded-2 bg-primary text-light" type="text" name="email" value={credentials.email} onChange={handleChange} required />
           <label className="input-label">Password</label>
-          <input className="input-group rounded-2 bg-primary text-secondary" type="password" name="password" value={credentials.password} onChange={handleChange} required />
+          <input className="input-group rounded-2 bg-primary text-light" type="password" name="password" value={credentials.password} onChange={handleChange} required />
           </div>
-          <button className="lighten-area col-3 btn light-background my-2  btn-outline-secondary fw-bold" type="submit">LOG IN</button>
+          <button className="lighten-area col-3 btn darker-background my-2  btn-outline-info light-lifted fw-bold" type="submit">LOG IN</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

@@ -35,25 +35,22 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div>
         <div className="col-6 my-3 mx-auto ">
           <form className="form-control dark-background light-text mx-auto lifted border border-primary border-1" autoComplete="off" onSubmit={this.handleSubmit}>
-            <div className="input-group my-2 px-2">
+            <div className="input-group my-2 text-light px-2">
 
             <label className="input-label">Name</label>
-            <input className="input-group rounded-2 bg-primary text-secondary" type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+            <input className="input-group rounded-2 bg-primary lighter-text text-light text-secondary" type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
             <label className="input-label">Email</label>
-            <input className="input-group rounded-2 bg-primary text-secondary" type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+            <input className="input-group rounded-2 bg-primary text-light text-secondary" type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
             <label className="input-label">Password</label>
-            <input className="input-group rounded-2 bg-primary text-secondary" type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+            <input className="input-group rounded-2 bg-primary text-light text-secondary" type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
             <label className="input-label">Confirm</label>
-            <input className="input-group rounded-2 bg-primary text-secondary" type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+            <input className="input-group rounded-2 bg-primary text-light text-secondary" type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
             </div>
-            <button className="lighten-area col-3 btn light-background my-2  btn-outline-secondary fw-bold" type="submit" disabled={disable}>SIGN UP</button>
+            <button className=" col-3 btn dark-backgroundg my-2  light-text border border-1 border-info lifted fw-bold" type="submit" disabled={disable}>SIGN UP</button>
           </form>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
-      </div>
     );
   }
   

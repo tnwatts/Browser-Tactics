@@ -1,20 +1,29 @@
 
 
+$primary: #006e84ee;
+$danger: rgb(255, 121, 109);
+$info: rgb(238, 247, 255);
+$secondary: rgba(46, 79, 24, 0.896);
+$warning: #ffcc67; 
+$card-border-width: 10px;
+$success: #748d60e1;
+$modal-fade-transform: rotate(720deg);
+$font-family-sans-serif: 'Exo 2';
+$enable-shadows: true;
+$enable-gradients: true;
+$enable-negative-margins: true;
+
 .game-container{
   display: flex;
   flex-direction: row;
-}
+  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
 
-$primary: #003742ee; 
-$info: rgba(182, 220, 255, 0.844);
-$secondary: rgba(6, 44, 25, 0.896);
-$warning: #ffb340; 
-$card-border-width: 10px;
-$success: #748d60e1;
-$font-family-sans-serif: 'Exo 2';
+}
  
 .App {
   text-align: center;
+  min-height: 100vmin;
+
 }
 
 .App-logo {
@@ -90,8 +99,11 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.602);
 }
 
 .off-base-background {
-background-color: #89855c;
-}
+  background: linear-gradient(217deg, #b08faada, rgba(255,0,0,0) 70.71%),
+  linear-gradient(127deg, #768fa0ed, rgba(0,255,0,0) 70.71%),
+  linear-gradient(336deg, #d3c3ab, rgba(0,0,255,0) 70.71%),
+  radial-gradient(30% 40%, rgba(255, 0, 0, 0.854))
+};
 
 
 .light-text {
@@ -102,7 +114,7 @@ background-color: #89855c;
 
 
 .lighter-text {
-    color: #d7acd0ee;
+    color: #f4c3effb;
     font-weight: 600;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.816);
 } 
@@ -125,6 +137,17 @@ background-color: #89855c;
             linear-gradient(336deg, #251500, rgba(0, 0, 138, 0) 70.71%);
 }
  
+.dark-backgroundg{
+    background: linear-gradient(217deg, #092407, rgba(149, 0, 0, 0) 70.71%),
+            linear-gradient(127deg, #2f1b05fc, rgba(0, 0, 0, 0.224) 70.71%),
+            linear-gradient(336deg, #310000, rgba(0, 0, 138, 0) 70.71%);
+}
+
+.darker-background{
+  background-image: linear-gradient(to right, #b3826fe8, #2e344dc2),
+                    linear-gradient((to  left,rgb(163, 254, 201) 50%), #64231de6 );
+}
+ 
 .light-backgroundg{
     background: linear-gradient(0.25turn,#588bad, #d3c3ab, #5ea69b);
 } 
@@ -134,23 +157,25 @@ background-color: #89855c;
     box-shadow: 3px 3px 3px 3px rgba(55, 71, 107, 0.887);
 }
 
+.light-lifted {
+    border: 1px solid rgb(255, 237, 191);
+    box-shadow: 2px 2px 4px  rgba(59, 86, 149, 0.887);
+}
+
 .lighten-area {
-    background-color: rgba(233, 246, 246, 0.521);
+    background-color: rgba(206, 255, 255, 0.617);
     border-radius: 5px;
     // padding: 0.8vmin;
     padding: 0.7vmin 1.2vmin;
 }
 
 .darken-area {
-    background-color: rgba(0, 0, 0, 0.616);
+    background-color: rgba(0, 0, 0, 0.542);
     border-radius: 5px;
     // padding: 0.8vmin;
     padding: 0.7vmin 1.2vmin;
 }
 
-.test{
-    color:red;
-}
 
 
 .film-back{

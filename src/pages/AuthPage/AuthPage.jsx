@@ -6,9 +6,9 @@ export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
   
   return (
-    <main className="">
-      <h1 className="col-6 mx-auto my-4 darkest-text lighten-area lifted">Please Sign in or Sign up!</h1>
-      <button className='btn btn-primary border border-secondary border-2 darkest-text' onClick={() => setShowLogin(!showLogin)}>
+    <main className="light-background light-lifted border border-5 border-info">
+      <h1 className="col-6 mx-auto my-1 mt-4 dark-text   lighten-area light-background lifted">Please Sign in or Sign up!</h1>
+      <button className='btn btn-primary darker-background border my-2  mt-4 border-info border-1  light-text text-light' onClick={() => setShowLogin(!showLogin)}>
         {showLogin ? 'Sign Up' : 'Log In'}
       </button>
       { showLogin ?
