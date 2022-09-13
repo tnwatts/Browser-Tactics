@@ -19,7 +19,7 @@ export default function NameChanger({user, setProfile}) {
             <button className="lighten-area col-3 btn darker-background my-2  btn-outline-info light-lifted fw-bold" type="submit">Set</button>
           </form>
         </div>
-        <button onClick={()=> deleteUser(user._id)} className="btn light-text text-danger dark-backgroundg btn-outline-danger btn-danger">Delete</button> 
+        <button onClick={()=> deleteUser(user._id)} className="vw-90 light-text text-danger dark-backgroundg ">Delete</button> 
       </div>
     )
 }

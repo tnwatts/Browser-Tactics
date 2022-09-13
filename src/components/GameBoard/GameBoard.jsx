@@ -6,23 +6,13 @@ import { updateBoardState } from "../../utilities/games-api";
 import { useState, useEffect, useRef } from "react";
 import { getUsersGame } from "../../utilities/games-api";
 export default function GameBoard({ game, setGame }) {
+  const [xy, setXY] = useState([1,1])
   const [board, setBoard] = useState(
     Array(330)
       .fill(0)
       .map((a, i) => [i % 22, Math.floor(i / 22)])
   );
-  const [coordinate, setCoordinate] = useState([
-    [
-      [320, 310],
-      [340, 370],
-      [300, 290],
-    ],
-    [
-      [620, 170],
-      [620, 210],
-      [640, 230],
-    ],
-  ]);
+
   const boardPos = useRef();
   const boardCells = useRef(new Array());
 
@@ -32,20 +22,6 @@ export default function GameBoard({ game, setGame }) {
     return [xPos, yPos];
   }
 
-  async function updateBoard() {
-    console.log(game);
-    let newCoord = [];
-    let gameCup = { ...game };
-    gameCup.p1.units.forEach(function (u) {
-      console.log(u.pos);
-      newCoord.push(XYpos(u.pos));
-    });
-    gameCup.p2.units.forEach(function (u) {
-      newCoord.push(XYpos(u.pos));
-    });
-    console.log(newCoord);
-    setCoordinate(newCoord);
-  }
 
   function meleeAttack(source, target) {
     let gameCup = { ...game };
@@ -62,8 +38,10 @@ export default function GameBoard({ game, setGame }) {
       <GameControls
         game={game}
         setGame={setGame}
-        updateBoard={updateBoard}
+        XYpos={XYpos}
         endTurn={endTurn}
+        xy={xy}
+
       />
 
       <div
@@ -77,8 +55,9 @@ export default function GameBoard({ game, setGame }) {
               ref={(el) => {
                 boardCells.current.push(el);
               }}
-              key={idx}
-              className={`game-cell`}
+              key={idx} 
+              className={`game-cell ${cell[0]==xy[0] && cell[1]==xy[1]? "highlight" : "" }`}
+              onClick={()=> setXY([cell[0],cell[1]])}
             >
               {" "}
               x: {cell[0]} y: {cell[1]}
@@ -96,6 +75,7 @@ export default function GameBoard({ game, setGame }) {
                 damage={(u.hp - u.injuries) / u.hp}
                 idx={idx}
                 pos={XYpos(u.pos)}
+                game={game}
               />
             )
         )}
@@ -115,52 +95,6 @@ export default function GameBoard({ game, setGame }) {
         )}
       </div>
 
-      <button
-        type="button"
-        className="col h-25 dark-text text-dark darken-area lifted fs-6 btn btn-sm border border-4 rounded-pill py-3 border-warning btn-outline-secondary  mx-5 "
-        data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
-      >
-        Launch static backdrop modal
-      </button>
-      <div
-        className="modal fade"
-        id="staticBackdrop"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabIndex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="staticBackdropLabel">
-                Modal title
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
             </div>
-            <div className="modal-body">...</div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Understood
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }

@@ -1,0 +1,28 @@
+.greeting{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 3px 8px;
+    left: 2%;
+    top: 1%;
+    font-weight: 800;
+    text-shadow: 1px 1px 4px black;
+    font-size: 14px;
+    color: rgb(255, 210, 159);
+    background:  linear-gradient(217deg, #21011b, rgba(149, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #011019fc, rgba(0, 0, 0, 0.224) 70.71%),
+    linear-gradient(336deg, #251500, rgba(0, 0, 138, 0) 70.71%);
+}
+.greeting-btn{
+    font-size: 10px;
+    opacity: 0.8;
+    margin-inline: 1px 8px;
+    border-block: 3px solid rgba(199, 15, 15, 0.32);
+    border-radius: 10%;
+    /* border-end-end-radius: 80% 20%; */
+    left: 1.5%;
+    color: rgb(255, 60, 60);
+    background: linear-gradient(217deg, #21011b, rgba(149, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #011019fc, rgba(0, 0, 0, 0.224) 70.71%),
+    linear-gradient(336deg, #251500, rgba(0, 0, 138, 0) 70.71%);
+    justify-self: flex-start;
+}

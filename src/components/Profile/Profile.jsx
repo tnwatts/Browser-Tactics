@@ -4,6 +4,7 @@ import { getProfile, setName } from '../../utilities/users-api';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { getUsersList } from '../../utilities/archetypes-api';
 import NameChanger from './NameChanger';
+import './Profile.css'
 
 export default function Profile({user}) {
     const [profile,setProfile] = useState({})
@@ -31,9 +32,14 @@ export default function Profile({user}) {
 
     return(
         <div className="profile-shell position-relative lifted rounded-pill dark-background">
-            <div className="position-absolute lighten-area fs-4 light-lifted rounded-3 ms-5 ps-4 mt-2 py-1 darkest-text light-background col12">
-                Hello {profile.name }<button onClick={()=> setEditForm(!editForm)} className="btn btn-sm border border-2 border-danger light-background ms-3 dark-text text-dark">edit</button> {editForm && <NameChanger user={user} setProfile={setProfile}/>} </div>
+
+            <div className="greeting position-absolute lighten-area light-lifted rounded-3 light-background ">
+            <div>
+            <button onClick={()=> setEditForm(!editForm)} className="greeting-btn">edit</button> 
+            Hello {profile.name }{editForm && <NameChanger user={user} setProfile={setProfile}/>}  
+            </div>
         { (!profile.gameStatus  ) &&  <button className="btn btn-info bg-dark  lighten-area btn-outline-warning" onClick={handleNewGame}>NEW GAME</button>}
+            </div>
         
    
 <div className="profile light-lifted light-background rounded-pill container px-4 ">

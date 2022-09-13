@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate,Navigate} from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import { seed } from '../../utilities/archetypes-api';
 import AuthPage from '../AuthPage/AuthPage';
@@ -10,7 +10,7 @@ import './App.scss';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-
+ 
   
   return (
     <main className="App darker-background">
@@ -21,6 +21,10 @@ export default function App() {
             {/* Route components in here */}
             <Route path='/game' element={<Game user={user}/>} />
             <Route path='/profile' element={<Profile user={user} />} />
+            <Route
+                    path="/"
+                    element={ <Navigate to="/profile" /> }
+                />
           </Routes>
         </>
         :
