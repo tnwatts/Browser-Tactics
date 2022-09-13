@@ -9,6 +9,8 @@ module.exports = {
   login,
   update,
   profile,
+  setName,
+  deleteUser,
 };
 
 async function login(req, res) {
@@ -49,6 +51,32 @@ async function update(req, res) {
 
 async function profile(req,res) {
   const profile = await Profile.findById(req.params.id)
+  res.json(profile);
+}
+
+async function deleteUser (req, res) {
+  let profile = await Profile.findById(req.params.id)
+  let user = await User.findById(req.params.id)
+  console.log(profile,user)
+  Profile.deleteOne({_id: profile._id }, function (err) {
+    if (err) {
+      console.log(err)
+      return handleError(err);
+    }
+  });
+  User.deleteOne({_id: user._id }, function (err) {
+    if (err) {
+      console.log(err)
+      return handleError(err);
+    }
+  });
+  res.json('');
+}
+
+async function setName(req,res) {
+  let profile = await Profile.findById(req.params.id)
+  profile.name = req.body.profileData
+  profile.save()
   res.json(profile);
 }
 

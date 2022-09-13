@@ -11,6 +11,9 @@ export function signUp(userData) {
 export function login(credentials) {
   return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
 }
+export function deleteUser(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
+}
 
 export function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
@@ -18,4 +21,8 @@ export function checkToken() {
 
 export function getProfile(userId) {
   return sendRequest(`${BASE_URL}/profile/${userId}`)
+}
+
+export function setName(userId, profileData) {
+  return sendRequest(`${BASE_URL}/profile/${userId}`, 'PUT', {profileData} )
 }

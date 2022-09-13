@@ -23,9 +23,7 @@ $enable-negative-margins: true;
   max-height: 80%;
   width: 70%;
 }
-.profile-shell{
-  
-}
+
  
 .App {
   text-align: center;
@@ -109,7 +107,6 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.602);
   background: linear-gradient(217deg, #b08faada, rgba(255,0,0,0) 70.71%),
   linear-gradient(127deg, #768fa0ed, rgba(0,255,0,0) 70.71%),
   linear-gradient(336deg, #d3c3ab, rgba(0,0,255,0) 70.71%),
-  radial-gradient(30% 40%, rgba(255, 0, 0, 0.854))
 };
 
 
@@ -152,7 +149,7 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.602);
 
 .darker-background{
   background-image: linear-gradient(to right, #b3826fe8, #2e344dc2),
-                    linear-gradient((to  left,rgb(163, 254, 201) 50%), #64231de6 );
+                    linear-gradient(to  left,rgb(163, 254, 201) 50%, #64231de6 );
 }
  
 .light-backgroundg{
@@ -194,17 +191,3 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.602);
 }
 
  
-/* sashanks classes */
-.add-remove {
-    position: absolute;
-    width: 110px;
-    height: 110px;
-    font-size: 90px;
-    opacity: 0;
-    padding-top: 0;
-    line-height: 0;
-  }
-
-  .add-remove:hover {
-    opacity: 80%;
-  } 
