@@ -21,11 +21,8 @@ Profile Page
 <img src="https://i.imgur.com/vTGpspy.png">
 
 
-Game Board
-<img src="https://i.imgur.com/iyf8B6I.png">
-
 Status view
-<img srtc="https://i.imgur.com/B2n6IVt.png">
+<img src="https://i.imgur.com/B2n6IVt.png">
 
 # Technologies Used
 
