@@ -3,7 +3,7 @@ import "./Token.css";
 import Token from "./Token";
 import GameControls from "../../components/GameControls/GameControls";
 import { updateBoardState } from "../../utilities/games-api";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { deleteGameEntry } from "../../utilities/games-api";
 import { useNavigate } from "react-router-dom";
 export default function GameBoard({ game, setGame, user }) {

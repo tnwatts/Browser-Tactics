@@ -1,21 +1,18 @@
-import sendRequest from './send-request';
-const BASE_URL = '/api/archetypes';
-
+import sendRequest from "./send-request";
+const BASE_URL = "/api/archetypes";
 
 export function getAll() {
-    return sendRequest(BASE_URL);
-  }
+  return sendRequest(BASE_URL);
+}
 
 export function getById(id) {
   return sendRequest(`${BASE_URL}/${id}`);
 }
 
 export function getUsersList(userId) {
-  return sendRequest(`${BASE_URL}/users/${userId}`)
-}
-  
-export function seed(){
-  sendRequest(`${BASE_URL}/seed`)
+  return sendRequest(`${BASE_URL}/users/${userId}`);
 }
 
-  
+export function seed() {
+  sendRequest(`${BASE_URL}/seed`);
+}

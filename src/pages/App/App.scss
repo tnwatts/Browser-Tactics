@@ -2,27 +2,23 @@ $primary: #006e84ee;
 $danger: rgb(255, 99, 99);
 $info: rgb(238, 247, 255);
 $secondary: rgba(46, 79, 24, 0.896);
-$warning: #ffcc67; 
+$warning: #ffcc67;
 $card-border-width: 10px;
 $success: #748d60e1;
 $modal-fade-transform: rotate(720deg);
-$font-family-sans-serif: 'Exo 2';
+$font-family-sans-serif: "Exo 2";
 $enable-shadows: true;
 $enable-gradients: true;
 $enable-negative-margins: true;
 
-
-
-.profile{
+.profile {
   max-height: 80%;
   width: 70%;
 }
 
- 
 .App {
   text-align: center;
   min-height: 100vmin;
-
 }
 
 .App-logo {
@@ -63,128 +59,121 @@ $enable-negative-margins: true;
 @import "./bootstrap/scss/bootstrap";
 /* Tay's Classes */
 .fill {
-    overflow: hidden;
-    background-size: cover;
-    background-position: center; 
-   
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
- 
+
 .dark-text {
-    color:  #3a2108;
-    font-weight: 600;
-    text-shadow: 1px 1px 1.1px #6e6464da;
-} 
+  color: #3a2108;
+  font-weight: 600;
+  text-shadow: 1px 1px 1.1px #6e6464da;
+}
 
 .darkest-text {
-    color:  #151618;
-    font-weight: 600;
-    text-shadow: 1px 1px 1.1px #6e6464da;
-} 
+  color: #151618;
+  font-weight: 600;
+  text-shadow: 1px 1px 1.1px #6e6464da;
+}
 
-.base-text { 
-color: #4c563c;
-font-weight: 600;
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.602);
+.base-text {
+  color: #4c563c;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.602);
 }
 
 .base-background {
-background-color: #596349;
-} 
+  background-color: #596349;
+}
 
-.front{
+.front {
   z-index: 5000;
 }
 .off-base-text {
-color: rgba(224, 224, 206, 0.9725490196);
-font-weight: 600;
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.602);
+  color: rgba(224, 224, 206, 0.9725490196);
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.602);
 }
 
 .off-base-background {
-  background: linear-gradient(217deg, #b08faada, rgba(255,0,0,0) 70.71%),
-  linear-gradient(127deg, #768fa0ed, rgba(0,255,0,0) 70.71%),
-  linear-gradient(336deg, #d3c3ab, rgba(0,0,255,0) 70.71%),
-};
-
+  background: linear-gradient(217deg, #b08faada, rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #768fa0ed, rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, #d3c3ab, rgba(0, 0, 255, 0) 70.71%);
+}
 
 .light-text {
-    color: #c4dff2;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.816);
-} 
-
+  color: #c4dff2;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.816);
+}
 
 .lighter-text {
-    color: #f4c3effb;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.816);
-} 
+  color: #f4c3effb;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.816);
+}
 
 .mid-text {
-    color: #918d5d;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.816);
-} 
-
-.light-background{
-    background: linear-gradient(217deg, #b08faada, rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, #768fa0ed, rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, #d3c3ab, rgba(0,0,255,0) 70.71%);
+  color: #918d5d;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.816);
 }
 
-.dark-background{
-    background: linear-gradient(217deg, #21011b, rgba(149, 0, 0, 0) 70.71%),
-            linear-gradient(127deg, #011019fc, rgba(0, 0, 0, 0.224) 70.71%),
-            linear-gradient(336deg, #251500, rgba(0, 0, 138, 0) 70.71%);
-}
- 
-.dark-backgroundg{
-    background: linear-gradient(217deg, #092407, rgba(149, 0, 0, 0) 70.71%),
-            linear-gradient(127deg, #2f1b05fc, rgba(0, 0, 0, 0.224) 70.71%),
-            linear-gradient(336deg, #310000, rgba(0, 0, 138, 0) 70.71%);
+.light-background {
+  background: linear-gradient(217deg, #b08faada, rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #768fa0ed, rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, #d3c3ab, rgba(0, 0, 255, 0) 70.71%);
 }
 
-.darker-background{
+.dark-background {
+  background: linear-gradient(217deg, #21011b, rgba(149, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #011019fc, rgba(0, 0, 0, 0.224) 70.71%),
+    linear-gradient(336deg, #251500, rgba(0, 0, 138, 0) 70.71%);
+}
+
+.dark-backgroundg {
+  background: linear-gradient(217deg, #092407, rgba(149, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #2f1b05fc, rgba(0, 0, 0, 0.224) 70.71%),
+    linear-gradient(336deg, #310000, rgba(0, 0, 138, 0) 70.71%);
+}
+
+.darker-background {
   background-image: linear-gradient(to right, #b3826fe8, #2e344dc2),
-                    linear-gradient(to  left,rgb(163, 254, 201) 50%, #64231de6 );
+    linear-gradient(to left, rgb(163, 254, 201) 50%, #64231de6);
 }
- 
-.light-backgroundg{
-    background: linear-gradient(0.25turn,#588bad, #d3c3ab, #5ea69b);
-} 
+
+.light-backgroundg {
+  background: linear-gradient(0.25turn, #588bad, #d3c3ab, #5ea69b);
+}
 
 .lifted {
-    border: 1px solid rgb(76, 15, 15);
-    box-shadow: 3px 3px 3px 3px rgba(55, 71, 107, 0.887);
+  border: 1px solid rgb(76, 15, 15);
+  box-shadow: 3px 3px 3px 3px rgba(55, 71, 107, 0.887);
 }
 
 .light-lifted {
-    border: 1px solid rgb(255, 237, 191);
-    box-shadow: 2px 2px 4px  rgba(59, 86, 149, 0.887);
+  border: 1px solid rgb(255, 237, 191);
+  box-shadow: 2px 2px 4px rgba(59, 86, 149, 0.887);
 }
 
 .lighten-area {
-    background-color: rgba(206, 255, 255, 0.617);
-    border-radius: 5px;
-    // padding: 0.8vmin;
-    padding: 0.7vmin 1.2vmin;
+  background-color: rgba(206, 255, 255, 0.617);
+  border-radius: 5px;
+  // padding: 0.8vmin;
+  padding: 0.7vmin 1.2vmin;
 }
 
 .darken-area {
-    background-color: rgba(0, 0, 0, 0.542);
-    border-radius: 5px;
-    // padding: 0.8vmin;
-    padding: 0.7vmin 1.2vmin;
+  background-color: rgba(0, 0, 0, 0.542);
+  border-radius: 5px;
+  // padding: 0.8vmin;
+  padding: 0.7vmin 1.2vmin;
 }
 
-
-
-.film-back{
-    min-height: 100%;
-    background-image: url("https://i.imgur.com/TQBMthh.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+.film-back {
+  min-height: 100%;
+  background-image: url("https://i.imgur.com/TQBMthh.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-
- 

@@ -1,9 +1,9 @@
-import { getToken } from './users-service';
+import { getToken } from "./users-service";
 
-export default async function sendRequest(url, method = 'GET', payload = null) {
+export default async function sendRequest(url, method = "GET", payload = null) {
   const options = { method };
   if (payload) {
-    options.headers = { 'Content-Type': 'application/json' };
+    options.headers = { "Content-Type": "application/json" };
     options.body = JSON.stringify(payload);
   }
   const token = getToken();
@@ -17,6 +17,5 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
   // res.json() returns a promise that resolves
   // to the data that was sent back by the server
   if (res.ok) return res.json();
-  throw new Error('Bad Request');
+  throw new Error("Bad Request");
 }
-

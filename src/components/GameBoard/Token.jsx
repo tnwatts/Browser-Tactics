@@ -1,9 +1,9 @@
 import "./Token.css"
 import TokenMenu from "./TokenMenu"
-import {useState, useRef} from 'react'
+import { useRef } from 'react'
 
 
-export default function Token({unit, player, pos,handleClick, damage, u, game, turn,idx}) {
+export default function Token({unit, player, pos,handleClick, damage, u, game, turn}) {
     let tokens = useRef({})
     console.log( turn, player,game)
 
