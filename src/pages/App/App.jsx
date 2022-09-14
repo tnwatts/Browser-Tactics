@@ -13,7 +13,7 @@ export default function App() {
  
   
   return (
-    <main className="App darker-background">
+    <main className="App light-background">
       { user ?
         <>
           <NavBar user={user} setUser={setUser} />

@@ -45,7 +45,7 @@ export default function Match({user}) {
     return(
 
         
-        <div className='col-11 ms-4 rounded-4  position-absolute top-25 start-0 d-flex flex-column'>
+        <div className="container d-flex container-fluid shadow-lg rounded-pill lighten-area justify-content-center">
             {game &&
             <>
             

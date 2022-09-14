@@ -1,7 +1,7 @@
-export default function TokenMenu({ game, token, setGame }) {
+export default function TokenMenu({ game, token, setGame, attack }) {
   return (
-    <div className="rounded-5 e1">
-    
+    <div onClick={attack} className="token-menu down">
+          
     </div>
   );
 }
