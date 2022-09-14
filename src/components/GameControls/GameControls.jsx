@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-export default function GameControls({ game, meleeAttack, XYpos ,moveTo}) {
+export default function GameControls({ game, meleeAttack, XYpos , moveTo, endGame, user}) {
 
 
   return (
@@ -8,7 +8,7 @@ export default function GameControls({ game, meleeAttack, XYpos ,moveTo}) {
       <h4 className="dark-background light-lifted light-text lighter-text  rounded-4 border border-2 border-danger">
         Game Controls
         <div >
-        {(Math.floor(game.turn / 6) + 1) % 2 === 1
+        {(game.p1.profile === user._id)  
           ? <small className="info" >You are Player One!</small>
           : <small className="info">"You are Player Two!"</small>}
       </div>
@@ -30,7 +30,7 @@ export default function GameControls({ game, meleeAttack, XYpos ,moveTo}) {
           </div>
       <div className="light-lifted darken-area fs-6 mb-2 ms-1   rounded-5 bottom-0 darker-background border  border-1 border-warning ">
       <button
-        onClick={''}
+        onClick={endGame}
         className="btn light-text text-danger e1 btn-danger lighten-area fs-6 rounded-pill btn-outline-danger border border-1 border-danger lifted px-4 mx-2 m-1 dark-backgroundg"
       >
         End Game

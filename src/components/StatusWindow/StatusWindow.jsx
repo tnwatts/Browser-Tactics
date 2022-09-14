@@ -59,7 +59,7 @@ export default function StatusWindow({ game, setGame,  user, startGame }) {
             <div className="selector"  style={{ backgroundImage: `url(${game.p1.units[2].image}`}} ></div>
             <h6 className="darkest-text mx-auto lifted rounded-2 light-background">{game.p1.units[2].name}</h6>
             </div>
-            <div className="col-4 mx-auto lifted py-2 light-background darken-area border border-2 border-warning rounded-2 ">
+            <div className="col-4 mx-auto lifted py-5 my-2 light-background darken-area border border-2 border-warning rounded-2 ">
                 { !game.p2.profile &&
                 <>
                 <h5>
@@ -85,7 +85,7 @@ export default function StatusWindow({ game, setGame,  user, startGame }) {
                   </div>
                   :
                   <>
-                  <h1 className="col-8 mx-auto my-5 lighten-area dark-background light-text p-5 rounder-3 border-3 border-primary border lifted  large">Game On!</h1>
+                  <h1 className="col-8 mx-auto my-4 lighten-area dark-background light-text p-4 rounder-3 border-3 border-primary border lifted  large">Game On!</h1>
                   </>
                   }
                 

@@ -9,6 +9,7 @@ module.exports = {
   getByUser,
   addPlayer2,
   updateGame,
+  deleteGame
 
 //   update,
 //   addPlayer,
@@ -48,6 +49,8 @@ async function addPlayer2(req,res) {
     const game = await Game.findOne({'p1.profile': req.user._id})
     const user = await Profile.findOne({name: req.params.id})
     game.p2.profile = user._id
+    user.gameStatus = 1
+    await user.save()
     await game.save()
     res.json(game)
 }
@@ -62,4 +65,25 @@ async function updateGame(req,res){
     game.turn = req.body.gameState.turn
     game.save()
     res.json(game)
+}
+
+async function deleteGame(req, res){
+    let game  = await Game.findById(req.params.id)
+    let p1 = await Profile.findById(game.p1.profile)
+    let p2 = await Profile.findById(game.p2.profile)
+    p1.gameStatus = 0
+    p1.wins += 1
+    p2.gameStatus = 0
+    p2.losses += 1
+    p1.save()
+    p2.save()
+    Game.deleteOne({_id: game._id }, function (err) {
+        if (err) {
+            console.log(err)
+            return handleError(err);
+        }
+    });
+    console.log(p1, p2)
+    
+    res.json('');
 }

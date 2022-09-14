@@ -14,7 +14,7 @@ export function addPlayer2(id){
     return sendRequest(`${BASE_URL}/users/${id}`, 'PUT')
 }
 export function deleteGameEntry(gameId){
-    return 
+    return sendRequest(`${BASE_URL}/${gameId}`, 'DELETE');
 }
 
 export function getAll() {

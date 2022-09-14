@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { setName, deleteUser } from '../../utilities/users-api';
+import { logOut } from '../../utilities/users-service';
 
-export default function NameChanger({user, setProfile}) {
+export default function NameChanger({user, setProfile, setUser, navigate}) {
     const [newName, setNewName] = useState('')
 
     async function handleSubmit(evt) {
@@ -19,7 +20,12 @@ export default function NameChanger({user, setProfile}) {
             <button className="lighten-area col-3 btn darker-background my-2  btn-outline-info light-lifted fw-bold" type="submit">Set</button>
           </form>
         </div>
-        <button onClick={()=> deleteUser(user._id)} className="vw-90 light-text text-danger dark-backgroundg ">Delete</button> 
+        <button onClick={()=> {
+          deleteUser(user._id);
+          logOut();
+          setUser(null);
+          navigate('/Game', { replace: true })
+          }} className="vw-90 light-text text-danger dark-backgroundg ">Delete</button> 
       </div>
     )
 }

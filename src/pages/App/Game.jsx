@@ -45,14 +45,19 @@ export default function Match({user}) {
     return(
 
         
-        <div className="container d-flex container-fluid shadow-lg rounded-pill lighten-area justify-content-center">
-            {game &&
+        <div className="mt-3 container d-flex container-fluid shadow-lg rounded-pill lighten-area justify-content-center">
+            {game ?
             <>
             
             <StatusWindow game={game} setGame={setGame} 
             user={user} startGame={startGame}/>
-            <GameBoard  game={game} setGame={setGame}/>
+            <GameBoard  user={user} game={game} setGame={setGame}/>
             </>
+            :
+            <div className="col-8 light-background  m-5 p-5 border border-3 border-infor rounded-pill">
+
+            You are not in a game
+            </div>
             }
            
         

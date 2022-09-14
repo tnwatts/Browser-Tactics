@@ -6,7 +6,7 @@ import { getUsersList } from '../../utilities/archetypes-api';
 import NameChanger from './NameChanger';
 import './Profile.css'
 
-export default function Profile({user}) {
+export default function Profile({user, setUser}) {
     const [profile,setProfile] = useState({})
     const [editForm, setEditForm] = useState(false)
     let navigate = useNavigate();
@@ -31,31 +31,30 @@ export default function Profile({user}) {
 
 
     return(
-        <div className="profile-shell position-relative lifted rounded-pill dark-background">
+        <div className="mt-1 mb-0 profile-shell position-relative lifted rounded-pill dark-background">
 
-            <div className="greeting position-absolute lighten-area light-lifted rounded-3 light-background ">
+            <div className="greeting position-absolute mb-0 lighten-area light-lifted rounded-3 light-background ">
             <div>
-            <button onClick={()=> setEditForm(!editForm)} className="greeting-btn">edit</button> 
-            Hello {profile.name }{editForm && <NameChanger user={user} setProfile={setProfile}/>}  
+            <button onClick={()=> setEditForm(!editForm)} className="greeting-btn ">edit</button> 
+            Hello {profile.name }{editForm && <NameChanger navigate={navigate} setUser={setUser} user={user} setProfile={setProfile}/>}  
             </div>
-        { (!profile.gameStatus  ) &&  <button className="btn btn-info bg-dark  lighten-area btn-outline-warning" onClick={handleNewGame}>NEW GAME</button>}
             </div>
         
    
-<div className="profile light-lifted light-background rounded-pill container px-4 ">
+<div className="profile light-lifted  light-background rounded-pill container px-4 ">
+        { (!profile.gameStatus  ) &&  <button className="mt-3 btn btn-info bg-dark m-0 lighten-area btn-outline-warning" onClick={handleNewGame}>NEW GAME</button>}
     <div className="row gx-4 gx-lg-5 align-items-center rounded-3  my-5">
-        <div className="col-8 pb-1 border border-2 border-danger light-lifted mx-auto rounded-pill" style={{ backgroundImage: `url("https://w0.peakpx.com/wallpaper/815/367/HD-wallpaper-fortnite-shadow-archetype-skin-fortnite-main-characters-gray-stone-background-shadow-archetype-fortnite-skins-shadow-archetype-skin-shadow-archetype-fortnite.jpg ")`}}>
-        <div className="col-8 mx-auto rounded-pill light-text darken-area my-1 text-light"> Game Status: {profile.gameStatus ?  (`You are player ${profile.gameStatus===1 ? 'one' : 'two'}`) : "You are not in a game"}</div>
-            {profile.gameStatus && <Link className='btn btn-danger dark-background light-text bg-info' to={'/game'}>To Game!</Link>}
-            <img className="img-fluid rounded-4 mb-4 mb-lg-0" src="" alt="..." />
-            <h1 className="font-weight-light light-text text-danger border border-2 border-info rounded-5 mb-5 light-background mt-2 light-lifted">Prepare to fight!</h1>
+        <div className="col-8 m-0 pb-1 border border-2 border-danger light-lifted mx-auto rounded-pill" style={{ backgroundImage: `url("https://w0.peakpx.com/wallpaper/815/367/HD-wallpaper-fortnite-shadow-archetype-skin-fortnite-main-characters-gray-stone-background-shadow-archetype-fortnite-skins-shadow-archetype-skin-shadow-archetype-fortnite.jpg ")`}}>
+        <div className="col-8 mx-auto  rounded-pill light-text darken-area  text-light"> Game Status: {profile.gameStatus ?  (`You are player ${profile.gameStatus===1 ? 'one' : 'two'}`) : "You are not in a game"}</div>
+            {profile.gameStatus && <Link className='btn  btn-danger dark-background light-text bg-info' to={'/game'}>To Game!</Link>}
+            <h1 className="font-weight-light light-text  text-danger border border-2 border-info rounded-5 light-background light-lifted">Prepare to fight!</h1>
             </div>
        
         
      
     </div>
-        <div className="col-9  mx-auto my-3  light-lifted light-text text-light darken-area my-2"> Game Record: {profile.wins}/{profile.losses}</div>
-    <div className="card text-primary lighter-background mb-2 border-2 border lifted border-warning text-center">
+        <div className="col-9  mx-auto my-0  light-lifted light-text text-light darken-area "> Game Record: {profile.wins}/{profile.losses}</div>
+    <div className="card text-primary lighter-background mb-2 border-2 border lifted border-warning my-0 text-center">
     </div>
     <div className="row my-3 mx-auto w-75 light-lifted light-background p-2 pt-2 pb-0 border border-3 border-info p-5 rounded-5 gx-lg-5">
     <div className="col-3 mx-auto light-lifted dark-background rounded-5 p-3 mb-5">

@@ -3,19 +3,13 @@
 }
 .token {
   position: absolute;
+  transition: all;
+  transition-duration: 2s;
   height: 43px;
   width: 43px;
   padding: 2px;
-  margin-top: 0;
-  transition: all;
-  transition-duration: 2s;
   opacity: 1;
-  border-radius: 50%;
   transform-origin: 50% 5em;
-  top: 800px;
- 
- 
-  z-index: -10;
 }
 
 .player1{
@@ -23,6 +17,7 @@
   border: 2.8px solid rgba(99, 21, 0, 0.927);
   box-shadow: 5px 5px 8px rgba(118, 14, 0, 0.763);
   z-index: 4;
+  border-radius: 50%;
   
 }
 
@@ -31,14 +26,18 @@
   border: 3px solid rgb(24, 101, 255);
   box-shadow: 6px 6px 9px rgba(0, 30, 85, 0.894);
   z-index: 4;
-  
+  border-radius: 50%;
 }
 
 .melee{
   border: 4px solid rgb(255, 217, 136);
   box-shadow: 4px 4px 8px rgb(244, 255, 162);
   border-radius: 50%;
-  animation: attack 3s ease-in infinite;
+  transition-duration: 1s;
+  rotate: -90deg;
+  margin-left: 60px;
+  margin-top: -60px;
+  animation: attack 2.5s infinite;
 }
 
 
@@ -51,7 +50,6 @@
   background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    z-index: 4;
 }
 .health-bar {
   -webkit-box-sizing: border-box;
@@ -74,7 +72,7 @@
   border-radius: 2px;
   position: relative;
   /* padding-bottom: 5px; */
-  transition: width 2s linear;
+  transition: width 1s linear;
   z-index: -10;
 }
 
@@ -106,27 +104,16 @@
   }
 }
 @keyframes attack {
-  0%, 4% {
-    transform: rotateZ(0deg);
+  90%{
+    margin-left: -20px;
   }
-  20% {
-    transform: rotateZ(-15deg);
+  100%{
+    margin-right: 5px;
   }
-  43% {
-    transform: rotateZ(-21deg);
-  }
-  53% {
-    transform: rotateZ(-8deg);
-  }
-  58% {
-    transform: rotateZ(21deg);
-  }
-  85%,85%, 95%, 100% {
-    transform: rotateZ(-1%);
-  }
+
 }
 @keyframes spin{
-  0%, 100%{
+  0%, 80%{
     transform: rotate(90deg);
   }
 }

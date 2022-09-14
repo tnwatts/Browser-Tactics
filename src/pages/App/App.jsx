@@ -20,7 +20,7 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path='/game' element={<Game user={user}/>} />
-            <Route path='/profile' element={<Profile user={user} />} />
+            <Route path='/profile' element={<Profile setUser={setUser} user={user} />} />
             <Route
                     path="/"
                     element={ <Navigate to="/profile" /> }
@@ -30,7 +30,7 @@ export default function App() {
         :
         <AuthPage setUser={setUser} />
       }
-      {/* <button className="btn dark-background text-warning  btn-outline-warning" onClick={seed} >SEED(DANGEROUS)</button> */}
+      <button className="btn dark-background text-warning  btn-outline-warning" onClick={seed} >SEED(DANGEROUS)</button>
     </main>
   );
 }
