@@ -30,7 +30,7 @@ export default function App() {
         :
         <AuthPage setUser={setUser} />
       }
-      <button className="btn dark-background text-warning  btn-outline-warning" onClick={seed} >SEED(DANGEROUS)</button>
+      {/* <button className="btn dark-background text-warning  btn-outline-warning" onClick={seed} >SEED(DANGEROUS)</button> */}
     </main>
   );
 }
